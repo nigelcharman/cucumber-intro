@@ -5,7 +5,8 @@ podTemplate(label: 'java',
     node("java"){
         container("jdk8") {
             stage('Test') {
-                sh './gradlew cucumber'
+                sh '''ls -al;
+                       ./gradlew cucumber'''
             }
         }
     }
