@@ -8,11 +8,11 @@ podTemplate(label: 'java',
             stage('Test') {
                 sh './gradlew cucumber'
             }
-            post {
-                always {
-                    cucumber fileIncludePattern: '**/cucumber.json',
-                            sortingMethod: 'ALPHABETICAL'
-                }
+        }
+        post {
+            always {
+                cucumber fileIncludePattern: '**/cucumber.json',
+                        sortingMethod: 'ALPHABETICAL'
             }
         }
     }
