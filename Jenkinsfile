@@ -6,8 +6,7 @@ podTemplate(label: 'java',
         checkout scm
         container("jdk8") {
             stage('Test') {
-                sh '''ls -al;
-                       ./gradlew cucumber'''
+                sh './gradlew cucumber'
             }
         }
     }
